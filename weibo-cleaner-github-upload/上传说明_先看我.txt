@@ -1,0 +1,16 @@
+微博批量清理助手：GitHub 云端编译包
+
+重要：不要把 ZIP 压缩包本身上传到 GitHub。请先解压，再上传解压后文件夹里的“所有内容”到新仓库根目录。
+
+1. 在 GitHub 新建仓库 weibo-cleaner-apk，建议 Public，不勾选 README、.gitignore 或 License 初始化。
+2. 进入仓库，点 Add file -> Upload files。
+3. 在电脑上打开本压缩包解压后的文件夹，选中里面所有项目内容并拖到 GitHub 上传区域。
+   必须包含 app 文件夹、build.gradle.kts、settings.gradle.kts、gradle.properties，以及隐藏目录 .github。
+   .github/workflows/build-apk.yml 必须最终位于仓库的同一路径，不能漏掉。
+4. 点 Commit changes。
+5. 打开仓库 Actions，选择 Build Android APK，点 Run workflow（或者等 push 自动运行）。
+6. 构建成功后打开本次运行记录，在 Artifacts 下载 weibo-cleaner-debug-apk，解压得到 app-debug.apk。
+
+不需要安装 Android Studio。云端使用 GitHub Actions 的 Ubuntu runner、JDK 17、Gradle 8.9 和 Android SDK 35。
+
+注意：本包是 Android 工程源文件，不是已经编译好的 APK。APK 只有云端构建成功后才会出现。构建成功也仍需在真实微博 App 上验证操作效果。
