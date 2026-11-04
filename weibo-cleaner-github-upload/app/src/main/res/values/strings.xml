@@ -1,4 +1,0 @@
-<resources>
-    <string name="app_name">微博批量清理助手</string>
-    <string name="accessibility_description">仅在微博 App 中，根据页面可见的已赞或已关注状态执行用户主动启动的取消操作。</string>
-</resources>
